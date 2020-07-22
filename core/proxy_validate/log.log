@@ -1,0 +1,1908 @@
+2020-07-18 16:59:09 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A575A85F8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000019A575A85F8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A575A85F8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A575A85F8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 16:59:11 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019A575E8908>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000019A575E8908>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019A575E8908>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019A575E8908>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:02:23 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019EFFD47160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000019EFFD47160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019EFFD47160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='120.83.101.89', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019EFFD47160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:02:25 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019EFFDBE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000019EFFDBE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019EFFDBE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019EFFDBE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:07:28 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='182.107.13.107', port=9000): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002B0131B7160>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000002B0131B7160>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='182.107.13.107', port=9000): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002B0131B7160>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='182.107.13.107', port=9000): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000002B0131B7160>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+2020-07-18 17:07:38 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002B01322D2B0>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000002B01322D2B0>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002B01322D2B0>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002B01322D2B0>, 'Connection to 182.107.13.107 timed out. (connect timeout=10)'))
+2020-07-18 17:09:12 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='83.10.75.30', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000029DD9737160>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x0000029DD9737160>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='83.10.75.30', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000029DD9737160>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='83.10.75.30', port=8080): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000029DD9737160>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+2020-07-18 17:09:22 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029DD97AD2B0>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x0000029DD97AD2B0>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029DD97AD2B0>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029DD97AD2B0>, 'Connection to 83.10.75.30 timed out. (connect timeout=10)'))
+2020-07-18 17:13:08 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='172.104.89.114', port=80): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001A1AEEE7160>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x000001A1AEEE7160>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='172.104.89.114', port=80): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001A1AEEE7160>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='172.104.89.114', port=80): Max retries exceeded with url: http://httpbin.org/get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000001A1AEEE7160>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+2020-07-18 17:13:18 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001A1AEF5D2B0>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 167, in _new_conn
+    % (self.host, self.timeout),
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001A1AEF5D2B0>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001A1AEF5D2B0>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001A1AEF5D2B0>, 'Connection to 172.104.89.114 timed out. (connect timeout=10)'))
+2020-07-18 17:13:40 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 316, in connect
+    self._tunnel()
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 929, in _tunnel
+    message.strip()))
+OSError: Tunnel connection failed: 404 Not Found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+2020-07-18 17:20:19 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 316, in connect
+    self._tunnel()
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 929, in _tunnel
+    message.strip()))
+OSError: Tunnel connection failed: 404 Not Found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 404 Not Found',)))
+2020-07-18 17:21:20 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019AF2DF1198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000019AF2DF1198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019AF2DF1198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019AF2DF1198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:21:22 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019AF2E6F390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000019AF2E6F390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019AF2E6F390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000019AF2E6F390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:23:41 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021F51C7B630>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000021F51C7B630>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021F51C7B630>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021F51C7B630>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:23:43 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021F51CB7940>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000021F51CB7940>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021F51CB7940>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000021F51CB7940>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:31:13 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002494CD77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002494CD77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002494CD77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002494CD77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:31:15 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002494CDEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000002494CDEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002494CDEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002494CDEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:36:27 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200FAA77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000200FAA77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200FAA77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200FAA77160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:36:29 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000200FAAEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x00000200FAAEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000200FAAEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000200FAAEE2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:38:32 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000254D0784828>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000254D0784828>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000254D0784828>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000254D0784828>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:46:35 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001610C2CD240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001610C2CD240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001610C2CD240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001610C2CD240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:46:37 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001610C341390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001610C341390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001610C341390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001610C341390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:48:49 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017DF702D240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000017DF702D240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017DF702D240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017DF702D240>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:48:51 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000017DF70A1390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000017DF70A1390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000017DF70A1390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000017DF70A1390>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:58:10 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001914308E278>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001914308E278>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001914308E278>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001914308E278>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-18 17:59:53 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000191439A5F28>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x00000191439A5F28>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000191439A5F28>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000191439A5F28>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:00:39 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000262ECAE7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000262ECAE7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000262ECAE7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000262ECAE7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:00:41 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000262ECB5E2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x00000262ECB5E2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000262ECB5E2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000262ECB5E2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:04:07 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C5F72CC2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002C5F72CC2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C5F72CC2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002C5F72CC2B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:11:01 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000016AB9DA0198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000016AB9DA0198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000016AB9DA0198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000016AB9DA0198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:11:03 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000016AB9E1D2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000016AB9E1D2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000016AB9E1D2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000016AB9E1D2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:28:20 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DB6DEA7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001DB6DEA7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DB6DEA7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DB6DEA7160>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:29:01 httpbin_validator.py [line:89] ERROR: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000013162180198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1262, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1308, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1257, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 1036, in _send_output
+    self.send(msg)
+  File "C:\ProgramData\Anaconda3\envs\for_Pycharm\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000013162180198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000013162180198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPConnectionPool(host='58.253.155.244', port=9999): Max retries exceeded with url: http://httpbin.org/get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000013162180198>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+2020-07-19 02:29:10 httpbin_validator.py [line:89] ERROR: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000131621FD2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 930, in _prepare_proxy
+    conn.connect()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 308, in connect
+    conn = self._new_conn()
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x00000131621FD2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000131621FD2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/myWorkspace/IPProxyPool/core/proxy_validate/httpbin_validator.py", line 72, in __check_http_proxies
+    response = requests.get(test_url, headers=get_random_request_headers(), proxies=proxies, timeout=TEST_TIMEOUT)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\myWorkspace\IPProxyPool\venv\lib\site-packages\requests\adapters.py", line 510, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000131621FD2E8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',)))

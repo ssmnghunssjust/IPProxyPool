@@ -1,0 +1,12 @@
+2020-35-07/17/20 16:35:12 log.py [line:67] INFO: 状态信息
+2020-35-07/17/20 16:35:12 log.py [line:68] WARNING: 警告信息
+2020-35-07/17/20 16:35:12 log.py [line:69] ERROR: 错误信息
+2020-35-07/17/20 16:35:12 log.py [line:70] CRITICAL: 严重错误信息
+2020-07-17 16:36:02 log.py [line:67] INFO: 状态信息
+2020-07-17 16:36:02 log.py [line:68] WARNING: 警告信息
+2020-07-17 16:36:02 log.py [line:69] ERROR: 错误信息
+2020-07-17 16:36:02 log.py [line:70] CRITICAL: 严重错误信息
+2020-07-17 16:38:12 log.py [line:65] INFO: 状态信息
+2020-07-17 16:38:12 log.py [line:66] WARNING: 警告信息
+2020-07-17 16:38:12 log.py [line:67] ERROR: 错误信息
+2020-07-17 16:38:12 log.py [line:68] CRITICAL: 严重错误信息
