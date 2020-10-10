@@ -26,7 +26,7 @@ LOG_FILENAME = 'log.log'
 TEST_TIMEOUT = 5
 
 # Mongodb连接URI
-MONGO_URI = 'mongodb://127.0.0.1:27017'
+MONGO_URI = 'mongodb://47.101.128.239:27017'
 
 PROXIES_SPIDERS = [
     'core.proxy_spider.proxy_spiders.Ip3366Spider',
@@ -40,6 +40,6 @@ RUN_SPIDER_INTERVAL = 1
 TEST_PROXIES_ASCYNC_COUNT = 10
 
 # 检测代理时间间隔
-TEST_PROXIES_INTERVAL = 2
+TEST_PROXIES_INTERVAL = 30
 
 PROXIES_DEFAULT_COUNT = 50

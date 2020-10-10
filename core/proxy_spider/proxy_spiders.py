@@ -22,7 +22,7 @@ from core.proxy_spider.base_spider import BaseSpider
 
 class Ip3366Spider(BaseSpider):
 
-    urls = ['http://www.ip3366.net/?stype=1&page={}'.format(i) for i in range(1, 4)]
+    urls = ['http://www.ip3366.net/?stype=1&page={}'.format(i) for i in range(1, 6)]
     group_xpath = '//div[@id="list"]/table/tbody/tr'
     detail_xpath = {
         'ip': './td[1]/text()',
